@@ -1,0 +1,108 @@
+<!--
+    Name: Sophia Arfan
+    Date: March 7th, 2026
+    Description: Index page for a memory match game. Includes the splash page with animations, 
+    and contains buttons that will trigger the display of certain 'screens' (triggering implemented in JS file),
+    and the content of the affromentioned screens.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emoji Memory Matching Game</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div id="splash">
+        <h1>⊹ ࣪ ˖Emoji Memory Match ࣪ ˖⊹</h1>
+        <div id="splashTopBtn">
+            <button id="splashHelpBtn">How to play</button>
+        </div>
+        <div id="splashHelpBox" class="hiding">
+            <p>
+                You will be given 5 seconds to view a set of cards, each having an emoji displayed. The cards
+                are then flipped over so the emoji's are hidden, you have to select two cards at a time, aiming to
+                get a matching pair based on what you remember from when the cards were face-up.
+            </p>
+            <p><strong>Wrong matches</strong> will flash <i>red</i> and add <i>2 seconds</i> to your timer.</p>
+            <p>Scores are calculated taking into account how many <strong>moves</strong> it took you to get all
+                matches, and the <strong>time</strong> you took to complete the puzzle.</p>
+            <p>Scores and personal bests are tracked separately per difficulty.</p>
+            <h2>Difficulties: </h2>
+            <p>Easy: 4 pairs to find | Medium: 8 pairs to find | Hard: 16 pairs to find</p>
+            <button id="quitSplashHelp">Done reading</button>
+        </div>
+        <canvas id="splashCanvas" width="340" height="180"></canvas>
+        <p class="splashP">Try to match them all!</p>
+        <button id="startBtn">Start Game!</button>
+    </div>
+
+    <div id="difficulties" class="hiding">
+        <h1>Choose your difficulty level: </h1>
+        <div id="levelButtons">
+            <button class="difficultyBtn" dataDifficulty="easy"> （˶ˆᗜˆ˵）Easy <span>4 pairs to match</span></button>
+            <button class="difficultyBtn" dataDifficulty="medium"> ᵔ ᵕ ᵔ Medium <span>8 pairs to match</span></button>
+            <button class="difficultyBtn" dataDifficulty="hard">(¬_¬")💢 Hard <span>12 pairs to match</span></button>
+        </div>
+        <button id="backBtn"> Back </button>
+    </div>
+
+    <div id="game" class="hiding">
+        <h1>⊹ ࣪ ˖Emoji Memory Match ࣪ ˖⊹</h1>
+        <button id="helpBtn">Help</button>
+        <div id="helpBox" class="hiding">
+            <p>
+                You will be given 5 seconds to view a set of cards, each having an emoji displayed. The cards
+                are then flipped over so the emoji's are hidden, you have to select two cards at a time, aiming to
+                get a matching pair based on what you remember from when the cards were face-up.
+            </p>
+            <p><strong>Wrong matches</strong> will flash <i>red</i> and add <i>2 seconds</i> to your timer.</p>
+            <p>Scores are calculated taking into account how many <strong>moves</strong> it took you to get all matches,
+                and the <strong>time</strong> you took to complete the puzzle.</p>
+            <p>Scores and personal bests are tracked seperately per difficulty.</p>
+            <p>Giving up will result in a score of 0 and reveal all the cards.</p>
+            <button id="gotitGame">Got it!</button>
+        </div>
+        <div id="gameHead">
+            <div id="progressBar">
+                <span>Moves: <strong id="counter">0</strong></span>
+                <div id="progressTracking">
+                    <div id="fillBar"></div>
+                </div>
+                <span>Time taken: <strong id="timeDisplay">0s</strong></span>
+            </div>
+            <div id="headBtn">
+                <button id="quitBtn">Give up.</button>
+            </div>
+            <p id="peek"></p>
+            <p id="difficulty"></p>
+            <div id="cardGrid"></div>
+        </div>
+    </div>
+
+    <div id="ending" class="hiding">
+        <div id="endingCard">
+            <div id="congratsEmoji">🥳</div>
+            <h2 id="endingTitle">Congrats on finishing the matching game!</h2>
+            <div id="stars"></div>
+            <p id="endingMessage">
+            <p>
+            <p id="bestScore"></p>
+            <div id="scoreHistory">
+                <h3>Past Rounds: <span id="historyDifficulty"></span></h3>
+                <ul id="pastScores"></ul>
+            </div>
+            <div id="endingBtns">
+                <button id="rematch">Play again!</button>
+                <button id="difficultyReselect">Change difficulty</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
