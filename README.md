@@ -1,6 +1,7 @@
 # Emoji Memory Match
 
 A browser-based memory card game with difficulty levels, a live timer, scoring, and personal best tracking. Built entirely with vanilla HTML, CSS, and JavaScript.
+
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-F26A8D?style=for-the-badge&logo=google-chrome&logoColor=white)](https://sophiaarfan.github.io/memory-match/)
 
 ## Overview
